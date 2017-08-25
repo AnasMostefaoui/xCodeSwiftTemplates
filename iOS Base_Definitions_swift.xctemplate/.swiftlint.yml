@@ -1,0 +1,60 @@
+disabled_rules:
+  - colon
+  - comma
+  - control_statement
+  - function_parameter_count
+  - missing_docs
+  - trailing_whitespace
+
+opt_in_rules:
+  - empty_count 
+
+force_unwrapping:
+  severity: error
+
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+
+line_length: 160
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 3 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+variable_name:
+  min_length: # only min_length
+    error: 3 # only error
+  excluded: # excluded via string array
+    - tr_pushTransition
+    - id
+    - ID
+    - URL
+    - GlobalAPIKey
+reporter: "xcode"
+
+trailing_comma:
+  mandatory_comma: true
+
+included: # paths to include during linting. `--path` is ignored if present.
+  - ___PACKAGENAME___
+  - ___PACKAGENAME___Tests
+  - ___PACKAGENAME___UITests
+
+excluded:
+  - Pods
+  - Carthage
+  - ___PACKAGENAME___/CoreDataAndModels/private
+  - ___PACKAGENAME___/Scripts
+  - ___PACKAGENAME___/Resources

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    <key>Identifier</key>
+    <string>com.anas.dt.unit.singleViewApplication</string>
+    <key>Ancestors</key>
+    <array>
+        <!-- custom storyboard application -->
+        <string>com.anas.dt.unit.storyboardApplication</string>
+    </array>
+    
+    <key>Concrete</key>
+    <true/>
+
+    <key>Description</key>
+    <string>This template provides a starting point for an application that uses a single view.</string>
+    <key>SortOrder</key>
+    <integer>1</integer>
+    
+    <key>Options</key>
+    <array>
+    </array>
+
+    <key>Definitions</key>
+    <dict>
+        <key>Base.lproj/Main.storyboard</key>
+        <dict>
+            
+            <key>Group</key>
+            <string>App</string>
+
+            <key>Path</key>
+            <string>Main.storyboard</string>
+            <key>SortOrder</key>
+            <integer>99</integer>
+        </dict>
+    </dict>
+</dict>
+</plist>
