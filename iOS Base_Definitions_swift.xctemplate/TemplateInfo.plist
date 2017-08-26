@@ -66,10 +66,21 @@
     <array>
     </array>
 
+    <!-- define variables -->
+	<key>Macros</key>
+	<dict>
+		<key>Staging</key>
+		<string>.staging</string>
+		<key>Debug</key>
+		<string>.debug</string>
+		<key>Store</key>
+		<string></string>
+	</dict> 
 
     <!-- modify target -->
     <key>Targets</key>
     <array>
+        
         <dict>
             <key>Name</key>
             <string>___PACKAGENAME___</string>
@@ -130,6 +141,18 @@
 					<key>ShellScript</key>
 					<string>&quot;${SRCROOT}/Scripts/SwiftLint/lint.sh&quot;</string>
 				</dict>
+
+                <!-- build number update -->
+				<dict>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>Name</key>
+					<string>Build number update</string>
+					<key>ShellPath</key>
+					<string>/bin/bash</string>
+					<key>ShellScript</key>
+					<string>&quot;$SRCROOT/Scripts/set_build_number.sh&quot;</string>
+				</dict>
             </array>
         </dict>
     </array>
@@ -142,9 +165,15 @@
 		<string>AppDelegate.swift</string>
         <!-- Resources -->
         
+
+        <!-- scheme -->
+		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</string>
+		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___-debug.xcscheme</string>
+		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___-staging.xcscheme</string>
         <!-- linter rules -->
         <string>../.swiftlint.yml</string>
         <!-- Script -->
+		<string>../Scripts/set_build_number.sh</string>
 		<!-- linter  -->
 		<string>../Scripts/SwiftLint/lint.sh</string>
         <!-- git -->
@@ -179,6 +208,39 @@
 			<string>AppDelegate.swift</string>
 	    </dict>
 
+        <!-- scheme -->
+        <!-- debug -->
+		<key>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___-debug.xcscheme</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Supporting Files</string>
+			</array>
+			<key>Path</key>
+			<string>___PACKAGENAME___debug.xcscheme</string>
+		</dict>
+        <!-- staging -->
+		<key>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___-staging.xcscheme</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Supporting Files</string>
+			</array>
+			<key>Path</key>
+			<string>___PACKAGENAME___staging.xcscheme</string>
+		</dict>
+
+        <!-- store -->
+		<key>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Supporting Files</string>
+			</array>
+			<key>Path</key>
+			<string>___PACKAGENAME___.xcscheme</string>
+		</dict>
+
         <!-- Define scripts path and xCode folder -->
         <key>../.swiftlint.yml</key>
         <dict>
@@ -193,6 +255,23 @@
         </dict>
 
 		<!-- Define scripts path and xCode folder -->
+        <!-- build number update -->
+        <key>../Scripts/set_build_number.sh</key>
+		<dict>
+            <!-- Don't add this file to the target build -->
+            <key>TargetIndices</key>
+			<array/>
+            
+			<key>Group</key>
+            <array>
+			    <string>no_xCode</string>
+		    	<string>Scripts</string>
+	    	</array>
+			<key>Path</key>
+			<string>Scripts/set_build_number.sh</string>
+		</dict>
+
+        <!-- linter script -->
 		<key>../Scripts/SwiftLint/lint.sh</key>
 		<dict>
             <!-- Don't add this file to the target build -->
