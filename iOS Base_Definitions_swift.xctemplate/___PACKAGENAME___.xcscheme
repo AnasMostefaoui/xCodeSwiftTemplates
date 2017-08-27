@@ -110,12 +110,21 @@
             </ActionContent>
          </ExecutionAction>
       </PreActions>
-      <PostActions>
+        <PostActions>
          <ExecutionAction
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "SHORT_VERSION=$($PLB -c &quot;Print CFBundleShortVersionString&quot; &quot;$PLIST&quot;)&#10;BUILD_NUMBER=$($PLB -c &quot;Print CFBundleVersion&quot; &quot;$PLIST&quot;)&#10;&#10;$PLB -c &quot;Set :CFBundleVersion $NEW_VERSION&quot; &#x201c;$PLIST&quot;">
+               scriptText = "xcode-version-bump.sh&#10;# @desc Auto-increment the version number (only) when a project is archived for export.&#10;# @usage&#10;# 1. Select: your Target in Xcode&#10;# 2. Select: Build Phases Tab&#10;# 3. Select: Add Build Phase -&gt; Add Run Script&#10;# 4. Paste code below in to new &quot;Run Script&quot; section&#10;# 5. Check the checkbox &quot;Run script only when installing&quot;&#10;# 6. Drag the &quot;Run Script&quot; below &quot;Link Binaries With Libraries&quot;&#10;# 7. Insure your starting version number is in SemVer format (e.g. 1.0.0)&#10;&#10;# This splits a two-decimal version string, such as &quot;0.45.123&quot;, allowing us to increment the third position.&#10;VERSIONNUM=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleShortVersionString&quot; &quot;${PROJECT_DIR}/${INFOPLIST_FILE}&quot;)&#10;NEWSUBVERSION=`echo $VERSIONNUM | awk -F &quot;.&quot; &apos;{print $3}&apos;`&#10;NEWSUBVERSION=$(($NEWSUBVERSION + 1))&#10;NEWVERSIONSTRING=`echo $VERSIONNUM | awk -F &quot;.&quot; &apos;{print $1 &quot;.&quot; $2 &quot;.&apos;$NEWSUBVERSION&apos;&quot; }&apos;`&#10;/usr/libexec/PlistBuddy -c &quot;Set :CFBundleShortVersionString $NEWVERSIONSTRING&quot; &quot;${PROJECT_DIR}/${INFOPLIST_FILE}&quot;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "A81B73E41F52EA7500667953"
+                     BuildableName = "___PACKAGENAME___.app"
+                     BlueprintName = "___PACKAGENAME___"
+                     ReferencedContainer = "container:___PACKAGENAME___.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
             </ActionContent>
          </ExecutionAction>
       </PostActions>
