@@ -88,6 +88,7 @@
             <dict>
                 <key>PRODUCT_NAME</key>
                 <string>$(TARGET_NAME)</string>
+
             </dict>
 
             <key>Configurations</key>
@@ -181,7 +182,9 @@
         <string>../Installation.md</string>
         
         <!-- update info.plist -->
+        <string>Info.plist</string>
         <string>Info.plist:BundleName</string>
+        <string>Info.plist:shortVersion</string>
 
     </array>
 
@@ -222,6 +225,9 @@
         <!-- staging -->
 		<key>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___-staging.xcscheme</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
+
 			<key>Group</key>
 			<array>
 				<string>Supporting Files</string>
@@ -233,6 +239,9 @@
         <!-- store -->
 		<key>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
+
 			<key>Group</key>
 			<array>
 				<string>Supporting Files</string>
@@ -318,6 +327,12 @@
         <key>Info.plist:BundleName</key>
         <string><![CDATA[<key>CFBundleIdentifier</key>
 <string>$(PRODUCT_BUNDLE_IDENTIFIER)$(BUNDLE_ID_SUFFIX)</string>
+]]>
+        </string>
+
+        <key>Info.plist:shortVersion</key>
+        <string><![CDATA[<key>CFBundleShortVersionString</key>
+<string>1.0.0</string>
 ]]>
         </string>
 
