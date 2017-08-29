@@ -20,9 +20,27 @@ final class NetworkAvailabilityManager : NSObject {
     }
     
     deinit {
+        NotificationCenter.default.removeObserver(self)
         self.stopMonitoring()
     }
     
+    func setup() {
+        self.observeNotifications()
+        self.startMonitoring()
+    }
+
+    private func observeNotifications() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(applicationWillResignActive),
+                                       name: Notification.Name.UIApplicationWillResignActive, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(applicationWillTerminate),
+                                       name: Notification.Name.UIApplicationWillTerminate, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(applicationDidEnterBackground),
+                                       name: Notification.Name.UIApplicationDidEnterBackground, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(applicationWillEnterForeground),
+                                       name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
+        
+    }
     @objc func reachabilityChanged(notification: Notification) {
         guard let reachability = notification.object as? SwiftReachability else {
             return
@@ -102,4 +120,24 @@ final class NetworkAvailabilityManager : NSObject {
         
         self.observers.removeNilReferance()
     }
+}
+
+// React to application life cycle
+extension NetworkAvailabilityManager {
+    @objc func applicationWillResignActive() {
+        
+    }
+    
+    @objc func applicationWillTerminate() {
+        self.stopMonitoring()
+    }
+
+    @objc func applicationDidEnterBackground() {
+        self.stopMonitoring()
+    }
+
+    @objc func applicationWillEnterForeground() {
+        self.startMonitoring()
+    }
+    
 }

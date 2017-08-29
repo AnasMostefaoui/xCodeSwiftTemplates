@@ -21,6 +21,8 @@ final class ApplicationSetup {
         }
 
         // do any setup here
+        
+        NetworkAvailabilityManager.instance.setup()
 
         didSetup = true
     }
