@@ -145,9 +145,16 @@
 		<!-- Setup -->
 		<string>Setup/ApplicationSetup.swift</string>
 		<string>AppDelegate.swift</string>
+		<!-- View controllers -->
+		<string>ViewControllers/ViewController.swift</string>
+
+		<!-- Network -->
+		<string>Networking/NetworkHelper.swift</string>
+		<string>Networking/SwiftReachability.swift</string>
+		<string>Utilities/WeakReferance.swift</string>
+
         <!-- Resources -->
         
-
         <!-- scheme -->
 		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</string>
 		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___-debug.xcscheme</string>
@@ -192,6 +199,52 @@
 			<key>Path</key>
 			<string>AppDelegate.swift</string>
 	    </dict>
+
+		<key>ViewControllers/ViewController.swift</key>
+		<dict>
+        	<key>Group</key>     
+	       <array>
+			    <string>App</string>
+		    	<string>ViewControllers</string>
+	    	</array>
+			<key>Path</key>
+			<string>ViewControllers/ViewController.swift</string>
+	    </dict>
+
+		<key>Networking/NetworkHelper.swift</key>
+		<dict>
+        	<key>Group</key>     
+	       <array>
+			    <string>App</string>
+		    	<string>Networking</string>
+	    	</array>
+			<key>Path</key>
+			<string>Networking/NetworkHelper.swift</string>
+	    </dict>
+
+		<key>Networking/SwiftReachability.swift</key>
+		<dict>
+        	<key>Group</key>     
+	       <array>
+			    <string>App</string>
+		    	<string>Networking</string>
+	    	</array>
+			<key>Path</key>
+			<string>Networking/SwiftReachability.swift</string>
+	    </dict>
+
+		<key>Utilities/WeakReferance.swift</key>
+		<dict>
+        	<key>Group</key>     
+	       <array>
+			    <string>App</string>
+		    	<string>Utilities</string>
+	    	</array>
+			<key>Path</key>
+			<string>Utilities/WeakReferance.swift</string>
+	    </dict>
+
+
 
         <!-- scheme -->
         <!-- debug -->
