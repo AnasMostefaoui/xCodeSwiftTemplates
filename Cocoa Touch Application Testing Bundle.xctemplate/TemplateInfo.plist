@@ -5,7 +5,7 @@
     <key>Kind</key>
     <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
     <key>Identifier</key>
-    <string>com.apple.dt.unit.cocoaTouchApplicationUnitTestBundle</string>
+    <string>com.anas.dt.unit.cocoaTouchApplicationUnitTestBundle</string>
     <key>Ancestors</key>
     <array>
         <string>com.apple.dt.unit.iosUnitTestBundleBase</string>
@@ -21,28 +21,20 @@
     </array>
     <key>Options</key>
     <array>
-        <dict>
-            <key>Identifier</key>
-            <string>languageChoice</string>
-            <key>Units</key>
-            <dict>
-                <key>Swift</key>
-                <dict>
-                    <key>Nodes</key>
-                    <array>
-                        <string>___PACKAGENAMEASIDENTIFIER___.swift</string>
-                    </array>
-                    <key>Definitions</key>
-                    <dict>
-                        <key>___PACKAGENAMEASIDENTIFIER___.swift</key>
-                        <dict>
-                            <key>Path</key>
-                            <string>___PACKAGENAMEASIDENTIFIER___.swift</string>
-                        </dict>
-                    </dict>
-                </dict>
-            </dict>
-        </dict>
     </array>
+    
+    <key>Nodes</key>
+    <array>
+        <string>___PACKAGENAMEASIDENTIFIER___UnitTests.swift</string>
+    </array>
+    
+    <key>Definitions</key>
+    <dict>
+        <key>___PACKAGENAMEASIDENTIFIER___UnitTests.swift</key>
+        <dict>
+            <key>Path</key>
+            <string>___PACKAGENAMEASIDENTIFIER___UnitTests.swift</string>
+        </dict>
+    </dict>
 </dict>
 </plist>

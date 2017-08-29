@@ -10,6 +10,7 @@
     <array>
         <string>com.apple.dt.unit.bundleBase</string>
     </array>
+
     <key>Targets</key>
     <array>
         <dict>
@@ -32,15 +33,18 @@
             </array>
         </dict>
     </array>
+
     <key>Options</key>
     <array>
         <dict>
         </dict>
     </array>
+
     <key>Nodes</key>
     <array>
         <string>Info.plist:PackageType</string>
     </array>
+    
     <key>Definitions</key>
     <dict>
         <key>Info.plist:PackageType</key>
